@@ -1,0 +1,41 @@
+PATH
+  remote: .
+  specs:
+    nexldrb (0.1.0)
+      json-ld (~> 2.1, >= 2.1.7)
+      multi_json (~> 1.12, >= 1.12.1)
+      nokogiri (~> 1.8, >= 1.8.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.0.5)
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
+    json-ld (2.1.7)
+      multi_json (~> 1.12)
+      rdf (~> 2.2, >= 2.2.8)
+    link_header (0.0.8)
+    mini_portile2 (2.3.0)
+    multi_json (1.12.2)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
+    power_assert (1.1.1)
+    rake (12.3.0)
+    rdf (2.2.12)
+      hamster (~> 3.0)
+      link_header (~> 0.0, >= 0.0.8)
+    test-unit (3.2.7)
+      power_assert
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.14, >= 1.14.6)
+  nexldrb!
+  rake (~> 12.0, >= 12.0.0)
+  test-unit (~> 3.2, >= 3.2.1)
+
+BUNDLED WITH
+   1.16.0
