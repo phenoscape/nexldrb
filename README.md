@@ -11,7 +11,8 @@ For changes see the [Changelog][changelog]
 
 ## API
 
-... coming soon
+* `nex2json`: NeXML to JSON (dumb, just converts XML to a hash, then to JSON)
+* `nex2ld`: NeXML to JSON-LD (doesn't work yet)
 
 ## Install
 

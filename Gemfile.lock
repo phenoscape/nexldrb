@@ -5,6 +5,7 @@ PATH
       json-ld (~> 2.1, >= 2.1.7)
       multi_json (~> 1.12, >= 1.12.1)
       nokogiri (~> 1.8, >= 1.8.1)
+      xml-to-hash (~> 1.0, >= 1.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -27,6 +28,8 @@ GEM
       link_header (~> 0.0, >= 0.0.8)
     test-unit (3.2.7)
       power_assert
+    xml-to-hash (1.0.3)
+      nokogiri (~> 1, >= 1.6)
 
 PLATFORMS
   ruby

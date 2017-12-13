@@ -1,6 +1,7 @@
+require "xml/to/hash"
+require "multi_json"
 require "nexldrb/version"
-require "nexldrb/request"
-require "nexldrb/nex2ld"
+require "nexldrb/utils"
 
 # @!macro nexldrb_params
 #   @param offset [Fixnum] Number of record to start at, any non-negative integer up to 10,000
@@ -25,5 +26,38 @@ require "nexldrb/nex2ld"
 # Phenoscape - The top level module for using methods to access the GBIF API
 
 module Nexld
-    
+  ##
+  # Convert NeXML to JSON
+  #
+  # @param path [String] path to a file with NeXML data
+  # @return [Hash] json
+  #
+  # @example
+  #      require 'nexldrb'
+  #
+  #      Nexld.nex2json(path: "eg1.xml")
+  def self.nex2json(path:)
+    nok = read_xml(path)
+    nokhash = nok.to_hash
+    return MultiJson.dump(nokhash)
+  end
+
+  ##
+  # Convert NeXML to JSON-LD
+  #
+  # Just duplicate of `nex2json` method for now
+  #
+  # @param path [String] path to a file with NeXML data
+  # @return [Hash] json (json-ld)
+  #
+  # @example
+  #      require 'nexldrb'
+  #
+  #      Nexld.nex2ld(path: "eg1.xml")
+  def self.nex2ld(path:)
+    nok = read_xml(path)
+    nokhash = nok.to_hash
+    return MultiJson.dump(nokhash)
+  end
+
 end
