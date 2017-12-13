@@ -10,9 +10,15 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    codecov (0.1.10)
+      json
+      simplecov
+      url
     concurrent-ruby (1.0.5)
+    docile (1.1.5)
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
+    json (2.1.0)
     json-ld (2.1.7)
       multi_json (~> 1.12)
       rdf (~> 2.2, >= 2.2.8)
@@ -26,8 +32,14 @@ GEM
     rdf (2.2.12)
       hamster (~> 3.0)
       link_header (~> 0.0, >= 0.0.8)
+    simplecov (0.14.1)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     test-unit (3.2.7)
       power_assert
+    url (0.3.2)
     xml-to-hash (1.0.3)
       nokogiri (~> 1, >= 1.6)
 
@@ -36,8 +48,10 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.14, >= 1.14.6)
+  codecov (~> 0.1.10)
   nexldrb!
   rake (~> 12.0, >= 12.0.0)
+  simplecov (~> 0.14.1)
   test-unit (~> 3.2, >= 3.2.1)
 
 BUNDLED WITH
