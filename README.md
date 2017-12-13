@@ -2,6 +2,7 @@ nexldrb
 =======
 
 [![Build Status](https://travis-ci.org/phenoscape/nexldrb.svg?branch=master)](https://travis-ci.org/phenoscape/nexldrb)
+[![codecov.io](http://codecov.io/github/phenoscape/nexldrb/coverage.svg?branch=master)](http://codecov.io/github/phenoscape/nexldrb?branch=master)
 
 `nexldrb` - NeXML <-> JSON-LD
 
