@@ -45,19 +45,33 @@ module Nexld
   ##
   # Convert NeXML to JSON-LD
   #
-  # Just duplicate of `nex2json` method for now
-  #
   # @param path [String] path to a file with NeXML data
-  # @return [Hash] json (json-ld)
+  # @param out [String] a file path to write to. deafult: nil (written to console)
+  # @return [Hash] json (soon to be json-ld)
   #
   # @example
   #      require 'nexldrb'
   #
   #      Nexld.nex2ld(path: "eg1.xml")
-  def self.nex2ld(path:)
+  #      Nexld.nex2ld(path: "eg1.xml", out: "eg1.json")
+  def self.nex2ld(path:, out: nil)
     nok = read_xml(path)
-    nokhash = nok.to_hash
-    return MultiJson.dump(nokhash)
+
+    # drop comment nodes
+    nok.xpath('//comment()').remove
+
+    # strip about attributes
+    nok.xpath('//@about').remove
+
+    # process xml
+    x = as_nexld(nok)
+
+    json = MultiJson.dump(x.to_hash)
+    if out.nil?
+      return json
+    else
+      write_json(json, out)
+    end
   end
 
 end
